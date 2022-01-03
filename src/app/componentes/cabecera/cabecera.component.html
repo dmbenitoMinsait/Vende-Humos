@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+        <a routerLink="/menu" class="navbar-brand">
+            <i class="fas fa-smog"></i> Vende Humos
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse collapse show" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a routerLink="/menu" class="nav-link active">Inicio
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+
+                <ng-container *ngIf="!isLoggedIn">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#registro">
+                            <i class="fas fa-user"></i> Registro
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#login">
+                            <i class="fas fa-user"></i> Login
+                        </a>
+                    </li>
+                </ng-container>
+
+
+                <!-- Desplegable en el nombre -->
+                <ng-container *ngIf="isLoggedIn">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#alta-vende-humos">
+                            <i class="fas fa-plus-circle"></i> Nuevo Vende Humos
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false"> 
+                                <img [src]="urlImagen" class="img" alt="imagen perfil">
+                            {{nombre}}</a>
+                            <!-- TODO AQUÍ TENEMOS QUE PONER LA FOTO DEL USUARIO -->
+
+                        <!-- Desplegable -->
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"> Mis me gustas</a>
+                            <a class="dropdown-item" href="#">Mis comentarios</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" (click)="logOut()"><i class="fas fa-user-times"></i>
+                                Salir</a>
+                        </div>
+                    </li>
+                </ng-container>
+
+            </ul>
+
+            <form class="d-flex buscador">
+                <input class="form-control me-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+<app-login></app-login>
+<app-registro></app-registro>
+<app-alta-vende-humos *ngIf="isLoggedIn"></app-alta-vende-humos>

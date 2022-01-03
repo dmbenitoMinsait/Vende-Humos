@@ -1,0 +1,25 @@
+.bg{
+    background-color: #355E63;
+}
+
+.titulos{
+    display: block;
+    text-align:center;
+    float: none;
+    align-items: center;
+}
+
+.fondoDesplegable{
+    background-color: transparent;
+}
+
+
+.img{
+    border-radius:25px;
+    border: 1px solid #999;
+    width:25px;
+    height:25px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background-size: cover;
+    }

@@ -1,0 +1,50 @@
+<!--Modal que llamaremos desde el resto de componentes-->
+<div class="modal fade" id="login">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title"><i class="fas fa-smog"></i> Vende Humos</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" #botonCerrarModal></button>
+            </div>
+
+            <!--Alerta en caso de que el formulario este mal validado-->
+            <div *ngIf="mostrarAlerta" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>¡Email y/o contraseña incorrectos!</strong> Rellenelo correctamente por favor.
+                <button type="button" class="btn-close" aria-label="Close" (click)="ocultarAlerta()"></button>
+            </div>
+
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col md-6 mx-auto">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Login</h4>
+                            </div>
+                            <div class="card-body">
+
+                                <form (ngSubmit)="login()" [formGroup]="formLogin">
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" formControlName="email" class="form-control"
+                                                placeholder="&#xf0e0;  Email">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control" id="password" formControlName="password"
+                                                placeholder="&#xf084;  Password">
+                                        </div>
+
+                                        <input type="submit" value="Login" class="btn btn-primary btn-block mt-2">
+                                        <button type="button" class="btn btn-secondary mx-2 mt-2" data-bs-toggle="modal"
+                                            data-bs-target="#registro">¿No tienes cuenta?</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

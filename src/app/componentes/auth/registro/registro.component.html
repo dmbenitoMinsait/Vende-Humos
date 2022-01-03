@@ -1,0 +1,68 @@
+<!--Modal que llamaremos desde el resto de componentes-->
+<div class="modal fade" id="registro">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title"><i class="fas fa-smog"></i> Vende Humos</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" #botonCerrarModal></button>
+            </div>
+
+            <!--Alerta en caso de que el formulario este mal validado-->
+            <div *ngIf="mostrarAlerta" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>¡Error en el formulario!</strong> Rellenelo correctamente por favor.
+                <button type="button" class="btn-close" aria-label="Close" (click)="ocultarAlerta()"></button>
+            </div>
+
+            <div class="container py-4">
+                <div class="row">
+                    <!--mx-auto es para que se centre el texto-->
+                    <div class="col md-6 mx-auto">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Registro</h4>
+                            </div>
+
+                            <div class="card-body">
+                                <form [formGroup]="formularioRegistro" (ngSubmit)="registro()">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <input type="text" name="username" class="form-control" formControlName="username" placeholder="&#xf406;  Username" 
+                                            [ngClass]="{'is-invalid': getPintaErrores('username')}">
+                                            <app-errores-formulario *ngIf="getPintaErrores('username')" [errores]="erroresUsername"></app-errores-formulario>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control" formControlName="email" placeholder="&#xf0e0;  Email"
+                                            [ngClass]="{'is-invalid': getPintaErrores('email')}">
+                                            <app-errores-formulario *ngIf="getPintaErrores('email')" [elemento]="'email'"></app-errores-formulario>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control" formControlName="password" placeholder="&#xf084;  Password"
+                                            [ngClass]="{'is-invalid': getPintaErrores('password')}">
+                                            <app-errores-formulario *ngIf="getPintaErrores('password')" [errores]="erroresPassword"></app-errores-formulario>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="password" name="confirmarPassword" class="form-control" formControlName="confirmarPassword" placeholder="&#xf3ed;  Repetir Password" [ngClass]="{'is-invalid': getPintaErrores('confirmarPassword')}">
+                                            <app-errores-formulario *ngIf="getPintaErrores('confirmarPassword')" [errores]="erroresConfirmarPassword"></app-errores-formulario>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="url" name="url" class="form-control" formControlName="urlImagen" placeholder="&#xf0c1;  URL Imagen"
+                                            [ngClass]="{'is-invalid': getPintaErrores('urlImagen')}">
+                                            <app-errores-formulario *ngIf="getPintaErrores('urlImagen')" [elemento]="'URL'"></app-errores-formulario>
+                                        </div>
+
+                                        <input type="submit" value="Registrarse" class="btn btn-primary btn-block m-2">
+                                        <button type="button" class="btn btn-secondary mx-2 " data-bs-toggle="modal" data-bs-target="#login">¿Tienes cuenta?</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

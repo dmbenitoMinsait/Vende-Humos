@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "username": "Dani",
+      "email": "aaa@gmail.com",
+      "password": "1234",
+      "rol": "USER",
+      "vendeHumosVotados": [],
+      "urlImagen": "https://www.lavanguardia.com/files/image_449_220/uploads/2016/10/23/5fa2fa5435882.jpeg",
+      "id": 1
+    },
+    {
+      "username": "Pepito",
+      "email": "bbb@gmail.com",
+      "password": "1234",
+      "rol": "USER",
+      "vendeHumosVotados": [],
+      "urlImagen": "https://www.lavanguardia.com/files/image_449_220/uploads/2016/10/23/5fa2fa5435882.jpeg",
+      "id": 2
+    },
+    {
+      "username": "Grillo",
+      "email": "ccc@gmail.com",
+      "password": "123",
+      "rol": "USER",
+      "vendeHumosVotados": [],
+      "urlImagen": "https://www.lavanguardia.com/files/image_449_220/uploads/2016/10/23/5fa2fa5435882.jpeg",
+      "id": 3
+    },
+    {
+      "username": "pepe",
+      "email": "eee@aaa.com",
+      "password": "123",
+      "confirmarPassword": "123",
+      "urlImagen": "https://i1.sndcdn.com/artworks-OWyyG93NAgaeGoJe-VK9Gog-t500x500.jpg",
+      "rol": "USER",
+      "id": 4
+    },
+    {
+      "username": "pepe",
+      "email": "pepe@gmail.com",
+      "password": "123",
+      "confirmarPassword": "123",
+      "urlImagen": "",
+      "rol": "USER",
+      "id": 5
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmarPassword": "",
+      "urlImagen": "",
+      "rol": "USER",
+      "id": 6
+    },
+    {
+      "username": null,
+      "email": null,
+      "password": null,
+      "confirmarPassword": null,
+      "urlImagen": null,
+      "rol": "USER",
+      "id": 7
+    },
+    {
+      "username": null,
+      "email": null,
+      "password": null,
+      "confirmarPassword": null,
+      "urlImagen": null,
+      "rol": "USER",
+      "id": 8
+    }
+  ],
+  "vendehumos": [
+    {},
+    {
+      "id": "1",
+      "nombre": "Josheff Ajram",
+      "descripcion": "",
+      "categorias": [
+        "Trading"
+      ],
+      "urlImagen": "https://www.lavanguardia.com/files/image_449_220/uploads/2016/10/23/5fa2fa5435882.jpeg",
+      "votadoPor": [
+        1,
+        2
+      ],
+      "usuarioId": 1
+    },
+    {
+      "id": "2",
+      "nombre": "Roberto Gamboa",
+      "descripcion": "https://pbs.twimg.com/media/EhKkbyrXsAEZC8L.jpg",
+      "categorias": [
+        "No se"
+      ],
+      "urlImagen": "",
+      "votadoPor": [
+        "1",
+        "2",
+        "3"
+      ],
+      "usuarioId": 2
+    },
+    {
+      "id": "3",
+      "nombre": "Willyrex",
+      "descripcion": "",
+      "categorias": [
+        "NFTs"
+      ],
+      "urlImagen": "https://i1.sndcdn.com/artworks-OWyyG93NAgaeGoJe-VK9Gog-t500x500.jpg",
+      "votadoPor": [
+        "1",
+        "2",
+        "3"
+      ],
+      "usuarioId": 3
+    }
+  ]
+}

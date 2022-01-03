@@ -1,0 +1,47 @@
+<app-cabecera></app-cabecera>
+
+
+<div class="container mt-5">
+    <hr />
+    <div class="card border-secondary mb-3" style="max-width: 25rem;">
+        <div class="card-body">
+            <div class="row">
+
+                <!-- Imagen -->
+                <div class="col-md-6">
+                    <img class="img" src="https://pbs.twimg.com/media/EhKkbyrXsAEZC8L.jpg" alt="imagen vende humos">
+                </div>
+
+                <!-- Texto -->
+                <div class="col-md-6">
+                    <h4 class="card-title">Nombre vende humos</h4>
+                    <p class="card-text">Pequeña descripción (a cortar a x caracteres)</p>
+                    <!-- <button class="btn btn-primary">Provisional (card button)</button> -->
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="card-footer text-muted">
+                <div class="row">
+                    <!-- Categorías -->
+                    <div class="col-md-6">
+                        <p>Categorías</p>
+                    </div>
+
+                    <!-- Botón likes -->
+                    <div class="col-md-6">
+                        <button *ngIf="isLikePulsado; else dislike" class="botonLike" (click)="botonLike()">
+                            <i class="fas fa-heart red"></i> (Número likes)
+                        </button>
+                        
+                        <ng-template #dislike>
+                            <button class="botonLike" (click)="botonLike()">
+                                <i class="fas fa-heart"></i> (Número likes)
+                            </button>
+                        </ng-template>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
