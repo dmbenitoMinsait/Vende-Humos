@@ -13,7 +13,7 @@ import { LoginModel } from 'src/app/models/login.model';
 })
 export class RegistroComponent implements OnInit {
 
-  formularioRegistro: FormGroup 
+  formularioRegistro: FormGroup
   mostrarAlerta: boolean = false
 
   @ViewChild ("botonCerrarModal") botonCerrarModal!: ElementRef;
@@ -43,7 +43,7 @@ export class RegistroComponent implements OnInit {
     private authService: AuthService) {
 
     this.formularioRegistro = this.formBuilder.group({
-      username: formBuilder.control('', [Validators.required, Validators.minLength(2)]), 
+      username: formBuilder.control('', [Validators.required, Validators.minLength(2)]),
       email: formBuilder.control('', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]),
       password: formBuilder.control('', Validators.required),
       confirmarPassword: formBuilder.control('', [Validators.required, CustomValidators.passwordRepetida]),
@@ -76,7 +76,7 @@ export class RegistroComponent implements OnInit {
                 this.mostrarAlerta = true
               }
           })
-       
+
     }
     console.log(this.formularioRegistro.value)
   }
