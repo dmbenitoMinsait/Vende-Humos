@@ -72,7 +72,7 @@ export class RegistroComponent implements OnInit {
               this.iniciarSesion(datosRegistro); // una vez que nos hemos registrado inicamos sesión
             },
             error: (err) => {
-                console.log('Error en el email',err)
+                console.log('Error en el ',err)
                 this.mostrarAlerta = true
               }
           })
